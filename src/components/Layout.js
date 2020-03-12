@@ -19,6 +19,11 @@ const Layout = ({children}) => {
                     Signin
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link to="/trucks" className="text-light nav-link">
+                    Trucks
+                </Link>
+            </li>
         </ul>
     );
     return (
