@@ -20,7 +20,7 @@ const Trucks = () => {
             sun: ""
             },
         phone_number: "",
-        email_address: "",
+        email_address: '',
         website_url: "",
         image_url: "",
         currentLocation: "",
@@ -43,61 +43,57 @@ const Trucks = () => {
     };
     
     const truckForm = () => (
-      <div className="container">
-        <div class="row">
-        <h1 style="text-align: center">Truck Information Page</h1>
-        <div style="width: 30%; margin: 25px auto;">
-             <form action="/trucks" method="POST">
+            <form>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="name" placeholder="Truck name"></input>
+                    <input className="form-control" type="text" name="name" onChange={handleChange('name')} value={name} placeholder="Truck name"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="address" placeholder="Address"></input>
+                    <input className="form-control" type="text" name="address" onChange={handleChange('address')} value={address} placeholder="Address"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="zipcode" placeholder="Zipcode"></input>
+                    <input className="form-control" type="text" name="zipcode" onChange={handleChange('zipcode')} value={name} placeholder="Zipcode"></input>
                 </div>
                 <div className="form-group">
                     <label for="hours">Hours</label>
-                    <input className="form-control" type="text" name="hours.Mon" placeholder="Monday"></input>
-                    <input className="form-control" type="text" name="hours.Tue" placeholder="Tuesday"></input>
-                    <input className="form-control" type="text" name="hours.Wed" placeholder="Wednesday"></input>
-                    <input className="form-control" type="text" name="hours.Thu" placeholder="Thursday"></input>
-                    <input className="form-control" type="text" name="hours.Fri" placeholder="Friday"></input>
-                    <input className="form-control" type="text" name="hours.Sat" placeholder="Saturday"></input>
-                    <input className="form-control" type="text" name="hours.Sun" placeholder="Sunday"></input>
+                    <input className="form-control" type="text" name="hours.Mon" onChange={handleChange('hours.mon')} value={hours.mon} placeholder="Monday"></input>
+                    <input className="form-control" type="text" name="hours.Tue" onChange={handleChange('hours.tue')} value={hours.tue} placeholder="Tuesday"></input>
+                    <input className="form-control" type="text" name="hours.Wed" onChange={handleChange('hours.wed')} value={hours.wed} placeholder="Wednesday"></input>
+                    <input className="form-control" type="text" name="hours.Thu" onChange={handleChange('hours.thu')} value={hours.thu} placeholder="Thursday"></input>
+                    <input className="form-control" type="text" name="hours.Fri" onChange={handleChange('name.fri')} value={hours.fri} placeholder="Friday"></input>
+                    <input className="form-control" type="text" name="hours.Sat" onChange={handleChange('name.sat')} value={hours.sat} placeholder="Saturday"></input>
+                    <input className="form-control" type="text" name="hours.Sun" onChange={handleChange('name.sun')} value={hours.sun} placeholder="Sunday"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="phone_number" placeholder="Phone number"></input>
+                    <input className="form-control" type="text" name="phone_number" onChange={handleChange('phone_number')} value={phone_number} placeholder="Phone number"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="email_address" placeholder="Email address"></input>
+                    <input className="form-control" type="text" name="email_address" onChange={handleChange('email_address')} value={email_address} placeholder="Email address"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="website_url" placeholder="Website"></input>
+                    <input className="form-control" type="text" name="website_url" onChange={handleChange('website_url')} value={website_url} placeholder="Website"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="image_url" placeholder="truck image URL"></input>
+                    <input className="form-control" type="text" name="image_url" onChange={handleChange('image_url')} value={image_url} placeholder="truck image URL"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="currentLocation" placeholder="currentLocation"></input>
+                    <input className="form-control" type="text" name="currentLocation" onChange={handleChange('currentLocation')} value={currentLocation} placeholder="currentLocation"></input>
                 </div>
                 <div className="form-group">
-                    <input className="form-control" type="text" name="owner" placeholder="owner"></input>
+                    <input className="form-control" type="text" name="owner" onChange={handleChange('owner')} value={owner} placeholder="owner"></input>
                 </div>
                 <div className="form-group">
                     <button className="btn btn-lg btn-primary btn-block" onClick={clickSubmit}>{buttonText}</button>
                 </div>
+                <Link to="/">Go back</Link>
             </form>
-            <Link to="/trucks">Go back</Link>
-        </div>
-    </div>
-    </div>
     )
   return (
     <Layout>
         <ToastContainer />
-        {truckForm}
+        {/* <h1 style="text-align: center">Truck Information Page</h1> */}
+        <h1>Truck Information Page</h1>
+
+        {truckForm()}
     </Layout>
     )
 };
