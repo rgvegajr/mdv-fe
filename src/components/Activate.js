@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 
 const Activate = ({match}) => {
     const [values, setValues] = useState({
-        name: "", 
+        name: '', 
         token: '',
         show: true,
     });
@@ -40,7 +40,6 @@ const Activate = ({match}) => {
             console.log('ACCOUNT ACTIVATION ERROR', error.response.data.error);
             toast.error(error.response.data.error);
         });
-        //event.target.value
     };
 
     const activationLink = () => (
@@ -59,7 +58,7 @@ const Activate = ({match}) => {
         {activationLink()}
         </div>
     </Layout>
-    )
+    );
 };
 
 export default Activate;
