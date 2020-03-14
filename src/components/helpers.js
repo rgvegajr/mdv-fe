@@ -9,7 +9,7 @@ export const setCookie = (key, value) => {
     }
 };
  //remove from cookie
- export const removeCookie = (key) => {
+ export const removeCookie = key => {
     if(window !== 'undefined') {
         cookie.remove(key, {
             expires: 1
@@ -17,7 +17,7 @@ export const setCookie = (key, value) => {
     }
 };
 //get from cookie such as stored token
-export const getCookie = (key) => {
+export const getCookie = key => {
     if(window !== 'undefined') {
         return cookie.get(key);
     }
@@ -32,7 +32,7 @@ export const setLocalStorage = (key, value) => {
     }
 };
 //remove from localstorage
-export const removeLocalStorage = (key) => {
+export const removeLocalStorage = key => {
     if(window !== 'undefined') {
         localStorage.removeItem(key);
     }
@@ -49,10 +49,12 @@ export const authenticate = (response, next) => {
 export const isAuth = () => {
     if (window !== 'undefined') {
         const cookieChecked = getCookie('token');
-        if(localStorage.getItem('user')) {
-            return JSON.parse(localStorage.getItem('user'))
-        } else {
-            return false;
+        if (cookieChecked) {
+            if(localStorage.getItem('user')) {
+                return JSON.parse(localStorage.getItem('user'));
+            } else {
+                return false;
+            }
         }
     }
 };

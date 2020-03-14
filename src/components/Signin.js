@@ -68,7 +68,7 @@ const Signin = () => {
         <div className="col-md-6 offset-md-3">
         <ToastContainer />
         {isAuth() ? <Redirect to="/trucks"/> : null}
-        // {JSON.stringify({email, password})}
+        {JSON.stringify({email, password})}
         <h1 className="p-5 text-center">Signin</h1>
         {signinForm()}
         </div>

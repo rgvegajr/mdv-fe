@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Trucks from './components/Trucks';
 import Activate from './components/Activate';
+
 import Owner from './components/Owner';
 import PrivateRoute from './components/PrivateRoute';
 

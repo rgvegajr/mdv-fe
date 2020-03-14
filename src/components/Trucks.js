@@ -3,6 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import Layout from './Layout';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
+import {authenticate, isAuth} from './helpers';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 const Trucks = () => {
@@ -89,6 +90,7 @@ const Trucks = () => {
     )
   return (
     <Layout>
+        {JSON.stringify(isAuth())}
         <ToastContainer />
         {/* <h1 style="text-align: center">Truck Information Page</h1> */}
         <h1>Truck Information Page</h1>

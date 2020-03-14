@@ -39,12 +39,9 @@ const Signup = () => {
             console.log('SIGNUP ERROR', error.response.data);
             setValues({...values, buttonText: 'Submit'});
             toast.error(error.response.data.error);
-        })
-        //event.target.value
-        
+        })        
     };
-    
-    
+        
     const signupForm = () => (
         <form>
             <div className="form-group">
@@ -69,6 +66,7 @@ const Signup = () => {
         )
     return (
     <Layout>
+        {JSON.stringify(isAuth())}
         <div className="col-md-6 offset-md-3">
         <ToastContainer />
         {isAuth() ? <Redirect to="/trucks"/> : null}

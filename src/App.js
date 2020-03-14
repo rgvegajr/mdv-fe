@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 const App = () => {
   return (
     <Layout>
-    <h1>React Landing Page</h1>
+    <h1>Midnight Food Vice Landing Page</h1>
     </Layout>
   )
 }
